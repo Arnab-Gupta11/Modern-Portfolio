@@ -1,15 +1,15 @@
-//<======= Toggle menu section =======>
-let menuList = document.getElementById("menuList");
-menuList.style.maxHeight = "0px";
+// //<======= Toggle menu section =======>
+// let menuList = document.getElementById("menuList");
+// menuList.style.maxHeight = "0px";
 
-function toggleMenu() {
-  if (menuList.style.maxHeight == "0px") {
-    menuList.style.maxHeight = "300px";
-  } else {
-    menuList.style.maxHeight = "0px";
-    // menuList.style.marginTop = "-20px";
-  }
-}
+// function toggleMenu() {
+//   if (menuList.style.maxHeight == "0px") {
+//     menuList.style.maxHeight = "300px";
+//   } else {
+//     menuList.style.maxHeight = "0px";
+//     // menuList.style.marginTop = "-20px";
+//   }
+// }
 
 //<======= About Me section Start =======>
 //<======= About Tab section  =======>
@@ -290,3 +290,77 @@ function createLanguageData() {
 }
 createLanguageData();
 //<======= About Me section End =======>
+
+//<======= Project section Start =======>
+const projectsData = [
+  {
+    id: 1,
+    title: "Luxury Sustainable Hotels & Retreats",
+    description:
+      "I led the complete reconstruction of lushia.org, crafting a dynamic online platform for Luxury Sustainable Hotels & Retreats International Association (LUSH). The project involved creating an interactive website that showcased eco-friendly hospitality brands, integrated online courses, a marketplace, and certifications, emphasizing sustainability and wellness.",
+  },
+  {
+    id: 2,
+    title: "Build Trusted Electrical Website",
+    description:
+      "As the sole developer behind trustedelectrical.co.nz, I designed and developed the website for Trusted Electrical Solutions Limited. The site served as a comprehensive platform showcasing the company's diverse electrical services, offering insights into new installations, repairs, and maintenance. Additionally, I ensured a seamless user experience and managed technical aspects to enhance the site's functionality.",
+  },
+  {
+    id: 3,
+    title: "Instructorium eLearning Platform",
+    description:
+      "Being the primary architect of Instructorium.com, I created an innovative website tailored to the diverse technical and non-technical courses offered by Instructorium. The platform was designed to facilitate online learning, live sessions, and offline programs, aiming to foster an interactive learning environment conducive to professional skill development.",
+  },
+  {
+    id: 4,
+    title: "Youtiqa Marketing Agency Website",
+    description:
+      "As the solo developer for the Youtiqa Marketing Agency website (youtiqa.com), I meticulously designed and developed the platform to showcase the agency's comprehensive services and impressive portfolio. The website features a user-friendly interface, emphasizing Youtiqa's expertise in marketing strategies and their successful projects. My focus was on creating a visually appealing site that effectively communicates the agency's value proposition to potential clients.",
+  },
+  {
+    id: 5,
+    title: "Volts Electric Limited Website",
+    description:
+      "I designed and developed the comprehensive website for Volts Electric Limited (voltselectric.co.nz), showcasing the breadth of electrical services and expertise offered by the company. The project involved a strategic layout to highlight the company's extensive portfolio, ensuring a user-friendly experience that promotes engagement. Key features were integrated to demonstrate Volts Electric Limited's capabilities, from residential to commercial projects, reinforcing their position as a leading electrical contractor.",
+  },
+  {
+    id: 6,
+    title: "De Castro Group Website",
+    description:
+      "As the sole developer, I built the website for De Castro Group (decastro.group), a multifaceted platform designed to showcase the diverse services offered by the company. The site features an elegant design, with a focus on user experience and engagement, effectively communicating the company's strengths in multiple sectors, including hospitality, real estate, and consulting.",
+  },
+  {
+    id: 7,
+    title: "Regenerative Hospitality Institute",
+    description:
+      "I developed the website for the Regenerative Hospitality Institute (lms.decastro.group), focusing on promoting the institute's mission to redefine hospitality through sustainability and regeneration. The site was built to serve as an educational resource, providing access to a wealth of knowledge, courses, and certifications aimed at transforming the hospitality industry.",
+  },
+];
+const ProjectWrapper = document.querySelector(".project-wrapper");
+function createProjectData() {
+  ProjectWrapper.innerHTML = projectsData
+    ?.map((data) => {
+      return `<div class="project-card px-4 py-2 rounded-2xl group hover:scale-105 duration-700 cursor-pointer">
+                  <div class="flex items-center justify-between">
+                    <h1 class="text-3xl xs:text-4xl sm:text-7xl leading-none font-black text-stroke group-hover:text-stroke-hover cursor-pointer">
+                    ${data.id}
+                    </h1>
+                    <span
+                      class="w-10 h-10 bg-primary-200 grid place-items-center rounded-full group-hover:-translate-x-1 duration-500 hover:scale-105 active:scale-95 group"
+                      ><i class="fa-solid fa-arrow-up rotate-45 duration-500 group-hover:scale-105"></i
+                    ></span>
+                  </div>
+
+                  <h2 class="text-primary-100 font-bold text-xs xsm:text-base md:text-2xl border-b-2 border-slate-200 pb-1">
+                  ${data.title}
+                  </h2>
+                  <p class="text-xs md:text-sm font-medium text-primary-600 leading-tight text-justify mt-2">
+                    ${data.description}
+                  </p>
+                </div>`;
+    })
+    .join(" ");
+}
+createProjectData();
+
+//<======= Project section End =======>
