@@ -11,6 +11,36 @@
 //   }
 // }
 
+//<======= Sidebar section =======>
+const nav = document.querySelector(".nav");
+const navList = nav.querySelectorAll("li");
+const totalNavlist = navList.length;
+const allSection = document.querySelectorAll(".section");
+navList.forEach((navLink) => {
+  const a = navLink.querySelector("a");
+  a.addEventListener("click", function () {
+    allSection.forEach((item) => {
+      item.classList.remove("back-section");
+    });
+    for (let j = 0; j < totalNavlist; j++) {
+      if (navList[j].querySelector("a").classList.contains("active")) {
+        allSection[j].classList.add("back-section");
+      }
+      navList[j].querySelector("a").classList.remove("active");
+    }
+    this.classList.add("active");
+    showSection(this);
+  });
+});
+
+function showSection(element) {
+  allSection.forEach((item) => {
+    item.classList.remove("active");
+  });
+  const target = element.getAttribute("href").split("#")[1];
+  document.querySelector("#" + target).classList.add("active");
+}
+
 //<======= About Me section Start =======>
 //<======= About Tab section  =======>
 const tabs = document.querySelectorAll("[data-tab-target]");

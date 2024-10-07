@@ -50,18 +50,35 @@ body {
   background: var(--bg-white-100);
   min-height: 100vh;
   display: block;
-  /* position: fixed;
-  left: 144px;
+  position: fixed;
+  left: 115px;
   top: 0;
   right: 0;
-  z-index: 0; */
+  bottom: 0;
+  z-index: 0;
   opacity: 1;
-  /* padding-left: 20px;
-  padding-right: 20px; */
+  overflow-y: auto;
+  overflow-x: hidden;
 }
-.main-container {
+.section.back-section {
+  z-index: 1;
+}
+.section.active {
+  z-index: 2;
+  opacity: 1;
+  animation: slideInSection 1s ease-in-out;
+}
+@keyframes slideInSection {
+  0% {
+    transform: translate(100%);
+  }
+  100% {
+    transform: translate(0%);
+  }
+}
+/* .main-container {
   padding-left: 115px;
-}
+} */
 .sidebar {
   width: 100px;
   /* background: var(--bg-white-200); */
