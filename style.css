@@ -1,3 +1,4 @@
+/* ====== Global ====== */
 :root {
   --bg-white-100: #edf4fa;
   --bg-white-200: #f2f2fc;
@@ -18,26 +19,20 @@
   box-sizing: border-box;
 }
 
-/* width */
+/* ====== Scrollbar ====== */
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
 }
-
-/* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 10px;
 }
-
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #ffbf49;
   border-radius: 10px;
   height: 5px;
 }
-
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #faad1b;
 }
@@ -45,8 +40,8 @@
 body {
   line-height: 1.5;
 }
+/* ====== Section ====== */
 .section {
-  /* background: green; */
   background: var(--bg-white-100);
   min-height: 100vh;
   display: block;
@@ -76,12 +71,9 @@ body {
     transform: translate(0%);
   }
 }
-/* .main-container {
-  padding-left: 115px;
-} */
+/* ====== Sidebar ====== */
 .sidebar {
   width: 100px;
-  /* background: var(--bg-white-200); */
   position: fixed;
   left: 0px;
   top: 0;
@@ -90,13 +82,8 @@ body {
 }
 .sidebar .nav li a.active {
   color: var(--text-black-300);
-  /* width: 20px;
-  height: 20px; */
 }
-.sidebar .toggle-sidebar {
-  position: fixed;
-  left: 120px;
-}
+
 .nav li,
 .menu-icon {
   padding: 5px;
@@ -107,7 +94,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 2px 0px, #e8dfec 0px 0px 6px 0px;
 }
 .tooltip {
   position: absolute;
@@ -132,12 +119,12 @@ body {
   visibility: visible;
   opacity: 1;
 }
-/* ====== About Section ====== */
+/* ====== About ====== */
 .about-card {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
-/* ====== Project Section ====== */
+/* ====== Project ====== */
 .project-card {
   box-shadow: #e8dfec 0px 3px 5px 0px, #e8dfec 0px 3px 5px 0px, rgba(10, 37, 64, 0.35) 0px 0px 3px 0px inset;
 }

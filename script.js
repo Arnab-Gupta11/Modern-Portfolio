@@ -1,15 +1,22 @@
 // //<======= Toggle menu section =======>
-// let menuList = document.getElementById("menuList");
-// menuList.style.maxHeight = "0px";
+const navToggleBtn = document.querySelector(".toggle-sidebar");
+const sidebar = document.querySelector(".sidebar");
+const icon = navToggleBtn.querySelector(".menu-icon i");
 
-// function toggleMenu() {
-//   if (menuList.style.maxHeight == "0px") {
-//     menuList.style.maxHeight = "300px";
-//   } else {
-//     menuList.style.maxHeight = "0px";
-//     // menuList.style.marginTop = "-20px";
-//   }
-// }
+navToggleBtn.addEventListener("click", () => {
+  sidebarTogglerBtn();
+});
+
+function sidebarTogglerBtn() {
+  sidebar.classList.toggle("md-mx:left-0");
+  navToggleBtn.classList.toggle("left-8");
+
+  if (sidebar.classList.contains("md-mx:left-0")) {
+    icon.classList.replace("fa-bars", "fa-times");
+  } else {
+    icon.classList.replace("fa-times", "fa-bars");
+  }
+}
 
 //<======= Sidebar section =======>
 const nav = document.querySelector(".nav");
@@ -392,5 +399,66 @@ function createProjectData() {
     .join(" ");
 }
 createProjectData();
-
 //<======= Project section End =======>
+
+//<======= Service section Start =======>
+const servicesData = [
+  {
+    title: "Web Development",
+    icon: "fa-solid fa-code",
+    description: "Building and maintaining websites, ensuring optimal performance and responsive design.",
+  },
+  {
+    title: "Web Design",
+    icon: "fa-solid fa-paint-brush",
+    description: "Crafting visually appealing and user-friendly website interfaces with attention to UX/UI principles.",
+  },
+  {
+    title: "Search Engine Optimization (SEO)",
+    icon: "fa-solid fa-search",
+    description: "Improving website rankings on search engines, increasing visibility, and driving organic traffic.",
+  },
+  {
+    title: "WordPress Design",
+    icon: "fa-brands fa-wordpress",
+    description: "Specializing in creating and customizing WordPress websites to meet business and personal needs.",
+  },
+  {
+    title: "Database Development",
+    icon: "fa-solid fa-database",
+    description: "Designing and maintaining structured databases, ensuring data integrity and accessibility.",
+  },
+  {
+    title: "Cloud Management",
+    icon: "fa-solid fa-cloud",
+    description: "Overseeing cloud infrastructure, optimizing performance, and ensuring data security in cloud systems.",
+  },
+  {
+    title: "Digital Marketing",
+    icon: "fa-solid fa-chart-line",
+    description: "Creating and managing online marketing strategies to promote brands and engage customers.",
+  },
+  {
+    title: "Advertising",
+    icon: "fa-solid fa-bullhorn",
+    description: "Implementing targeted advertising campaigns to increase reach and attract potential customers.",
+  },
+];
+const ServiceWrapper = document.querySelector(".service-wrapper");
+function createServiceData() {
+  ServiceWrapper.innerHTML = servicesData
+    ?.map((data) => {
+      return `<div class="p-3 about-card rounded-lg hover:scale-105 duration-700 cursor-pointer group xs-mx:rounded-tr-[50px] md:rounded-tr-[50px] md-mx:rounded-tr-[80px] bs:rounded-tr-[80px] relative">
+              <span class="xs-mx:text-2xl md-mx:text-4xl md:text-2xl  bs:text-4xl mb-4 text-left rounded-full absolute border-b-8 border-[#edf4fa] border-t-0 p-3 xs-mx:-top-8 md:-top-8 md-mx:-top-10  bs:-top-10 left-5 shadow-lg shadow-primary-400 md:w-14 md:h-14 xs-mx:w-14 xs-mx:h-14 md-mx:w-20 md-mx:h-20 bs:w-20 bs:h-20 grid place-items-center text-primary-200"><i class="${data.icon} "></i></span>   
+              <div class="p-6 rounded-lg flex flex-col items-center text-center">
+                
+                <h3 class="text-lg font-semibold text-primary-100">${data.title}</h3>
+                <p class="text-sm mt-2 text-primary-600 font-medium">${data.description}</p>
+             </div>
+            </div>`;
+    })
+    .join(" ");
+}
+createServiceData();
+
+//<======= Service section End =======>
