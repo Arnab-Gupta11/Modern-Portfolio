@@ -19,6 +19,9 @@
   box-sizing: border-box;
 }
 
+.input {
+  caret-color: var(--text-black-300);
+}
 /* ====== Scrollbar ====== */
 ::-webkit-scrollbar {
   width: 5px;

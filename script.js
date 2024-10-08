@@ -462,3 +462,36 @@ function createServiceData() {
 createServiceData();
 
 //<======= Service section End =======>
+
+//<======= Contact section Start =======>
+const contactInfo = [
+  {
+    icon: "fa-solid fa-location-dot", // Font Awesome icon class for location
+    label: "Location:",
+    details: "Chattogram, Bangladesh",
+  },
+  {
+    icon: "fa-solid fa-phone", // Font Awesome icon class for phone
+    label: "Phone:",
+    details: "+8801793109660",
+  },
+  {
+    icon: "fa-solid fa-envelope", // Font Awesome icon class for email
+    label: "Email:",
+    details: "arnab.gupta.011@gmail.com",
+  },
+];
+const contactWrapper = document.querySelector(".contact-info");
+function createContactData() {
+  contactWrapper.innerHTML = contactInfo
+    ?.map((data) => {
+      return `<div class="p-3 about-card rounded-lg w-8/12 hover:scale-105 duration-700 text-center cursor-pointer group">
+              <i class="${data.icon} text-xl xsm:text-2xl sm:text-3xl text-primary-200 mb-2 group-hover:scale-105"></i>
+              <h3 class="text-base xsm:text-lg font-semibold text-primary-500">${data.label}</h3>
+              <h3 class="text-sm xsm:text-base font-medium text-primary-600 break-words">${data.details}</h3>
+            </div>`;
+    })
+    .join(" ");
+}
+createContactData();
+//<======= Contact section End =======>
